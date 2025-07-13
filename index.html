@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Virtual Tour 360, un recorrido por la Institucion Educativa Tecnica Nuestra Señora de Nazareth" />
+    <meta name="keywords"
+        content="Virtual Tour, 360, 180, Panorama, Institucion, Educacion, Project, Boyaca, Colombia" />
+    <meta name="author" content="MMXXV-MCX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/virtual-tour-plugin/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gallery-plugin/index.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/fitty/dist/fitty.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="anim.js"></script>
+
+    <title>Virtual Tour</title>
+
+    <style>
+        .psv-virtual-tour-link {
+            display: none !important;
+        }
+
+        #viewer {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <canvas id="Bgradient2"></canvas>
+
+    <nav>
+        <div id="logo"></div>
+        <div>
+            <ul>
+                <li>
+                    <div></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="video-container">
+        <video autoplay muted loop id="video-loop">
+            <source src="Cherry Blossoms in Tokyo JAPAN 2023 - Cinematic 4K Video   Sony A7SIII.webm" type="video/mp4">
+        </video>
+        <div id="video-blend"></div>
+        <section id="section01">
+            <div id="container_tittle">
+                <h1 class="tittle01">VIRTUAL TOUR 360</h1><br>
+                <h2 class="tittle02">INSTITUCION EDUCATIVA TECNICA NUESTRA SEÑORA DE NAZARETH</h2>
+            </div>
+            <div class="explore-tag">
+                <p>EXPLORAR AHORA</p>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div id="container">
+        <div id="background-blend"></div>
+        <div id="sections">
+
+
+
+            <section id="section02">
+                <div id="viewer"></div>
+                <div class="play-tag">
+                    <p>INGRESAR</p>
+                </div>
+            </section>
+
+            <section id="section03">
+                <h2>SOBRE NOSOTROS</h2>
+                <p class="SplitText01">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, dignissimos?
+                    Voluptatibus tempore, rerum
+                    quasi qui laborum fugit. Rerum amet consectetur adipisicing elit. Repellat, laboriosam quis nisi,
+                    veniam,
+                    minus ipsum officia natus molestiae, mollitia
+                    corporis at!</p>
+                <p class="SplitText01">amet consectetur adipisicing elit. Repellat, Lorem, ipsum dolor sit amet
+                    Repellat,
+                    dignissimos? Voluptatibus
+                    tempore, rerum
+                    quasi qui laborum fugit. Rerum laboriosam quis nisi, veniam, minus ipsum officia natus molestiae,
+                    mollitia
+                    corporis at!</p>
+                <p class="SplitText01">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, dignissimos?
+                    Voluptatibus tempore, rerum
+                    quasi qui laborum fugit. Rerum laboriosam quis nisi, veniam, natus molestiae, mollitia
+                    corporis at!</p>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div id="container_Flogo01">
+                <div class="footer-logo01"></div>
+            </div>
+            <div id="TittleFooter">
+                <p class="tittle03">VIRTUAL TOUR</p>
+                <p class="tittle04">INSTITUCION EDUCATIVA TECNICA NUESTRA SEÑORA DE NAZARETH</p>
+            </div>
+            <div id="container_Flogo02">
+                <div class="footer-logo02"></div>
+            </div>
+        </div>
+        <div id="footer-textblock">
+            <p class="SplitText02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus maxime in
+                veritatis tenetur quo
+                tempore nostrum exercitationem molestiae quam magni consequuntur aliquam iusto, hic, veniam
+                perspiciatis
+                facilis repellat ex odio.</p>
+            <p class="SplitText02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus maxime in
+                veritatis tenetur quo
+                tempore nostrum exercitationem molestiae quam magni consequuntur aliquam iusto, hic, veniam
+                perspiciatis
+                facilis repellat ex odio.</p>
+        </div>
+        <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque iste sapiente corrupti ut cum itaque
+            maxime qui animi, velit ipsum optio error excepturi, dolorem blanditiis! Molestias, nemo dignissimos!
+            Nostrum, ullam?</P>
+    </footer>
+
+
+    <div id="markers-panel-container" style="display:none"></div>
+
+    <custom-marker id="custom-marker-element01" style="display: none">
+        <img src="https://photo-sphere-viewer-data.netlify.app/assets/sphere-small.jpg" />
+        <h2>Palermo, Italia:01</h2>
+        <p>Se encuentra en el noroeste de la isla de Sicilia, junto al Golfo de Palermo en el Mar Tirreno.</p>
+    </custom-marker>
+
+
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+            "@photo-sphere-viewer/virtual-tour-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/virtual-tour-plugin/index.module.js",
+            "@photo-sphere-viewer/markers-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin/index.module.js",
+            "@photo-sphere-viewer/gallery-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gallery-plugin/index.module.js"
+        }
+    }
+</script>
+
+    <!--<script src="custom.js"></script>-->
+
+
+    <script type="module">
+
+        import { Viewer } from '@photo-sphere-viewer/core';
+        import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin';
+        import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
+        import { GalleryPlugin } from '@photo-sphere-viewer/gallery-plugin';
+
+        await fetch('markers_panel.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('markers-panel-container').innerHTML = html;
+            });
+
+        const nodes = [
+            {
+                id: 'node-1',
+                panorama: 'panoramics/twilight_sunset.jpg',
+                longitude: '-150deg',
+                //sphereCorrection: { pan: '-220deg' },
+                markers: [
+                    {
+                        id: 'goto-node-2',
+                        position: { yaw: '70deg', pitch: '-5deg' },
+                        image: 'target-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'El mar',
+                    },
+                    {
+                        id: 'panel-01',
+                        position: { yaw: '-150deg', pitch: '15deg' },
+                        image: 'center-alt-text-bubble-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        anchor: 'bottom center',
+                        zoomLvl: 100,
+                        opacity: 0.75,
+                        tooltip: '<b>Informacion</b>',
+                        content: document.getElementById('lorem-content01').innerHTML,
+                        zIndex: 10,
+                    }
+                ]
+            },
+            {
+                id: 'node-2',
+                panorama: 'panoramics/IMG_20250608_214752_360.jpg',
+                panoData: {
+                    fullWidth: 16384,
+                    fullHeight: 8192,
+                    croppedWidth: 8192,
+                    croppedHeight: 4096,
+                    croppedX: 4096,
+                    croppedY: 2048,
+                },
+
+                markers: [
+                    {
+                        id: 'goto-node-3',
+                        position: { yaw: '-70deg', pitch: '-36deg' },
+                        image: 'target-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'A restaurant...',
+                    },
+                    {
+                        id: 'goto-node-1',
+                        position: { yaw: '80deg', pitch: '-12deg' },
+                        image: 'back-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'To back',
+                    },
+                    {
+                        id: 'panel-02',
+                        position: { yaw: '0deg', pitch: '7deg' },
+                        image: 'center-alt-text-bubble-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        anchor: 'bottom center',
+                        zoomLvl: 100,
+                        opacity: 0.75,
+                        tooltip: '<b>Informacion</b>',
+                        content: document.getElementById('lorem-content02').innerHTML,
+                        zIndex: 10,
+                    }
+                ]
+            },
+            {
+                id: 'node-3',
+                panorama: 'panoramics/warm_restaurant.jpg',
+
+                //sphereCorrection: { pan: '-15deg' },
+
+                markers: [
+                    {
+                        id: 'goto-node-4',
+                        position: { yaw: '-133deg', pitch: '0deg' },
+                        image: 'target-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'to terrace',
+                    },
+                    {
+                        id: 'goto-node-2',
+                        position: { yaw: '-53deg', pitch: '10deg' },
+                        image: 'back-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'To back',
+                    },
+                    {
+                        id: 'panel-03',
+                        position: { yaw: '128deg', pitch: '-2deg' },
+                        image: 'center-alt-text-bubble-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        anchor: 'bottom center',
+                        zoomLvl: 100,
+                        opacity: 0.75,
+                        tooltip: '<b>Informacion</b>',
+                        content: document.getElementById('lorem-content03').innerHTML,
+                        zIndex: 10,
+                    }
+                ]
+            },
+            {
+                id: 'node-4',
+                panorama: 'panoramics/allphoto-bangkok-GfXqtWmiuDI-unsplash.jpg',
+                panoData: {
+                    fullWidth: 16384,
+                    fullHeight: 8192,
+                    croppedWidth: 8192,
+                    croppedHeight: 4096,
+                    croppedX: 4096,
+                    croppedY: 2048,
+                },
+                //sphereCorrection: { pan: '115deg' },
+                markers: [
+                    {
+                        id: 'goto-node-5',
+                        position: { yaw: '-3deg', pitch: '38deg' },
+                        image: 'target-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'to Palermo',
+                    },
+                    {
+                        id: 'goto-node-3',
+                        position: { yaw: '31deg', pitch: '0deg' },
+                        image: 'back-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'To back',
+                    },
+                    {
+                        id: 'panel-04',
+                        position: { yaw: '-75deg', pitch: '32deg' },
+                        image: 'center-alt-text-bubble-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        anchor: 'bottom center',
+                        zoomLvl: 100,
+                        opacity: 0.75,
+                        tooltip: '<b>Informacion</b>',
+                        content: document.getElementById('lorem-content04').innerHTML,
+                        zIndex: 10,
+                    }
+                ]
+            },
+            {
+                id: 'node-5',
+                panorama: 'panoramics/palermo_sidewalk.jpg',
+                //sphereCorrection: { pan: '-105deg' },
+                markers: [
+                    {
+                        id: 'goto-node-6',
+                        position: { yaw: '40deg', pitch: '10deg' },
+                        image: 'target-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'A Yokohama',
+                    },
+                    {
+                        id: 'goto-node-4',
+                        position: { yaw: '-140deg', pitch: '15deg' },
+                        image: 'back-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'To back',
+                    },
+                    {
+                        id: 'panel-05',
+                        position: { yaw: '113deg', pitch: '25deg' },
+                        image: 'center-alt-text-bubble-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        anchor: 'bottom center',
+                        zoomLvl: 100,
+                        opacity: 0.75,
+                        tooltip: '<b>Informacion</b>',
+                        content: document.getElementById('lorem-content05').innerHTML,
+                        zIndex: 10,
+                    }
+                ]
+            },
+            {
+                id: 'node-6',
+                panorama: 'panoramics/yokohama180.jpg',
+                panoData: {
+                    fullWidth: 16384,
+                    fullHeight: 8192,
+                    croppedWidth: 8192,
+                    croppedHeight: 4096,
+                    croppedX: 4096,
+                    croppedY: 2048,
+                },
+                //sphereCorrection: { pan: '135deg' },
+                markers: [
+                    {
+                        id: 'goto-node-1',
+                        position: { yaw: '-2deg', pitch: '10deg' },
+                        image: 'target-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'To Heighborhood...',
+                    },
+                    {
+                        id: 'goto-node-5',
+                        position: { yaw: '-73deg', pitch: '-2deg' },
+                        image: 'back-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        opacity: 0.75,
+                        tooltip: 'To back',
+                    },
+                    {
+                        id: 'panel-06',
+                        position: { yaw: '23deg', pitch: '28deg' },
+                        image: 'center-alt-text-bubble-svgrepo-com.svg',
+                        size: { width: 48, height: 48 },
+                        anchor: 'bottom center',
+                        zoomLvl: 100,
+                        opacity: 0.75,
+                        tooltip: '<b>Informacion</b>',
+                        content: document.getElementById('lorem-content06').innerHTML,
+                        zIndex: 10,
+                    }
+                ]
+            }
+        ];
+
+
+
+
+        const viewer = new Viewer({
+
+            container: document.querySelector('#viewer'),
+            defaultZoomLvl: 50,
+            mousewheelCtrlKey: true,
+            navbar: ['zoom', 'markersList', 'fullscreen'],
+
+            plugins: [
+                [VirtualTourPlugin, {
+                    positionMode: 'manual',
+                    renderMode: '3d',
+                    nodes: nodes,
+                    startNodeId: 'node-1',
+                }],
+                [MarkersPlugin, {}],
+
+                /*[GalleryPlugin, {
+                    items: [
+                        {
+                            id: 'pano-1',
+                            name: 'Panorama 1',
+                            panorama: 'panoramics/twilight_sunset.jpg',
+                            thumbnail: 'DeathStranding.png',
+                        },
+                        {
+                            id: 'pano-2',
+                            name: 'Panorama 2',
+                            panorama: 'p02.jpg',
+                            panoData: {
+                                fullWidth: 16384,
+                                fullHeight: 8192,
+                                croppedWidth: 8192,
+                                croppedHeight: 4096,
+                                croppedX: 4096,
+                                croppedY: 2048,
+                            },
+                            thumbnail: 'DeadSpaceRemake.png',
+                        },
+                        {
+                            id: 'pano-3',
+                            name: 'Panorama 3',
+                            panorama: 'panoramics/warm_restaurant.jpg',
+                            thumbnail: 'ACUnity.png',
+                        },
+                        {
+                            id: 'pano-4',
+                            name: 'Panorama 4',
+                            panorama: 'p04.jpg',
+                            thumbnail: 'GoW4.png',
+                        },
+                        {
+                            id: 'pano-5',
+                            name: 'Panorama 5',
+                            panorama: 'panoramics/palermo_sidewalk.jpg',
+                            thumbnail: 'GoW4.png',
+                        },
+                        {
+                            id: 'pano-6',
+                            name: 'Panorama 6',
+                            panorama: 'p06.jpg',
+                            thumbnail: 'GoW4.png',
+                        },
+                    ],
+                }],*/
+            ]
+        });
+        const vtPlugin = viewer.getPlugin(VirtualTourPlugin);
+        const galleryPlugin = viewer.getPlugin(GalleryPlugin);
+        const markersPlugin = viewer.getPlugin(MarkersPlugin);
+
+        vtPlugin.addEventListener('select-marker', ({ marker }) => {
+            console.log('Marker seleccionado:', marker);
+            if (marker.content) {
+                markersPlugin.showPanel(marker.id);
+
+            }
+        });
+
+        viewer.getPlugin(MarkersPlugin).addEventListener('select-marker', ({ marker }) => {
+            if (marker.id === 'goto-node-1') {
+                vtPlugin.setCurrentNode('node-1');
+            }
+            if (marker.id === 'goto-node-2') {
+                vtPlugin.setCurrentNode('node-2');
+            }
+            if (marker.id === 'goto-node-3') {
+                vtPlugin.setCurrentNode('node-3');
+            }
+            if (marker.id === 'goto-node-4') {
+                vtPlugin.setCurrentNode('node-4');
+            }
+            if (marker.id === 'goto-node-5') {
+                vtPlugin.setCurrentNode('node-5');
+            }
+            if (marker.id === 'goto-node-6') {
+                vtPlugin.setCurrentNode('node-6');
+            }
+        });
+
+
+
+
+    </script>
+
+    <script>
+
+
+        fitty('.tittle01', {
+            minSize: 8,
+            maxSize: 512,
+        });
+
+        fitty('.tittle02', {
+            minSize: 8,
+            maxSize: 512,
+            multiLine: false,
+        });
+
+        fitty('.tittle03', {
+            minSize: 8,
+            maxSize: 512,
+        });
+
+        fitty('.tittle04', {
+            minSize: 8,
+            maxSize: 512,
+            multiLine: false,
+        });
+
+    </script>
+    <script>
+        document.querySelectorAll('.play-tag').forEach(tag => {
+            tag.addEventListener('click', function () {
+                const viewer = document.getElementById('viewer');
+                viewer.style.pointerEvents = 'auto';
+                viewer.classList.add('viewer-unlocked');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
