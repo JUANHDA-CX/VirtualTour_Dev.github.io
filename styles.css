@@ -1,9 +1,11 @@
 @font-face {
+    font-display: swap;
     font-family: Orbitron;
     src: local("fonts/Orbitron-Variable.ttf"), url("fonts/Orbitron-Variable.ttf");
 }
 
 @font-face {
+    font-display: swap;
     font-family: FamiljenGrotesk;
     src: local("fonts/FamiljenGrotesk-Variable.ttf"), url("fonts/FamiljenGrotesk-Variable.ttf");
 }
