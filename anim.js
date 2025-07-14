@@ -1,13 +1,14 @@
 addEventListener("DOMContentLoaded", (event) => {
 
-    gsap.registerPlugin(SplitText)
+    gsap.registerPlugin(SplitText);
+    gsap.registerPlugin(ScrollTrigger);
 
     gsap.from('#section02', {
         scrollTrigger: {
             trigger: '#viewer',
             start: 'center bottom',
             end: 'center bottom',
-            markers: true,
+            markers: false,
             toggleActions: 'play none reverse none',
             /*toggleActions: "onEnter onLeave onEnterBack onLeaveBack"*/
 
@@ -16,6 +17,9 @@ addEventListener("DOMContentLoaded", (event) => {
         opacity: 0,
         duration: 2,
     });
+
+    let split01, split02;
+
     gsap.to('.SplitText01', {
         scrollTrigger: {
             trigger: '#section03',
@@ -38,11 +42,9 @@ addEventListener("DOMContentLoaded", (event) => {
                 });
             },
             onLeaveBack: () => {
-                if (SplitText.get(".SplitText01")[0]) {
-                    SplitText.get(".SplitText01")[0].revert();
-                }
+                if (split01) split01.revert();
             }
-        },
+        }
     });
 
     gsap.to('.SplitText02', {
@@ -67,35 +69,11 @@ addEventListener("DOMContentLoaded", (event) => {
                 });
             },
             onLeaveBack: () => {
-                if (SplitText.get(".SplitText02")[0]) {
-                    SplitText.get(".SplitText02")[0].revert();
-                }
+                if (split02) split02.revert();
             }
         },
     });
 
 
-    var granimInstance = new Granim({
-        element: '#Bgradient',
-        direction: 'left-right',
-        isPausedWhenNotInView: true,
-        states: {
-            "default-state": {
-                gradients: [
-                    [
-                        { color: '#222222', pos: .2 },
-                        { color: '#444444', pos: .8 },
-                        { color: '#1a1a1a', pos: 1 }
-                    ], [
-                        { color: '#111111', pos: 0 },
-                        { color: '#333333', pos: .2 },
-                        { color: '#222222', pos: .75 }
-                    ],
-
-                ],
-                transitionSpeed: 15000
-            }
-        }
-    });
 
 });
