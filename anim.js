@@ -1,7 +1,7 @@
 addEventListener("DOMContentLoaded", (event) => {
 
     gsap.registerPlugin(SplitText);
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
     gsap.from('#section02', {
         scrollTrigger: {
@@ -17,6 +17,14 @@ addEventListener("DOMContentLoaded", (event) => {
         opacity: 0,
         duration: 2,
     });
+
+    /*
+        ScrollSmoother.create({
+            smooth: 1,
+            effects: true,
+            smoothTouch: 0.1,
+        });*/
+
 
     let split01, split02;
 
@@ -73,7 +81,5 @@ addEventListener("DOMContentLoaded", (event) => {
             }
         },
     });
-
-
 
 });

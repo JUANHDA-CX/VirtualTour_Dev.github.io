@@ -26,19 +26,22 @@ document.fonts.ready.then(() => {
 
 document.querySelectorAll('.play-tag').forEach(tag => {
     tag.addEventListener('click', function () {
+        const viewerCover = document.querySelector('.cover-v');
         const viewer = document.getElementById('viewer');
-        const btnText = tag.querySelector('p');
-        const isUnlocked = viewer.classList.contains('viewer-unlocked');
+        const btnText = document.querySelector('.play-txt');
+        const isCoverHidden = viewerCover.style.display === 'none';
 
-        if (isUnlocked) {
-            // Bloquear viewer
+        if (isCoverHidden) {
+            // bloquear visor
+            viewerCover.style.display = 'block';
+            viewerCover.style.pointerEvents = 'auto';
             viewer.style.pointerEvents = 'none';
-            viewer.classList.remove('viewer-unlocked');
             btnText.textContent = 'INGRESAR';
         } else {
-            // Desbloquear viewer
+            // desbloquear visor
+            viewerCover.style.display = 'none';
+            viewerCover.style.pointerEvents = 'none';
             viewer.style.pointerEvents = 'auto';
-            viewer.classList.add('viewer-unlocked');
             btnText.textContent = 'SALIR';
         }
     });
@@ -50,3 +53,21 @@ window.addEventListener('orientationchange', () => {
         location.reload();
     }
 });*/
+
+const scrollBtn = document.getElementById("scrollBtn");
+const playTag = document.querySelector(".play-tag"); // o ".tag-play" si ese es el nombre real
+
+// Vibración al hacer clic en scrollBtn
+scrollBtn.addEventListener("click", () => {
+    if (navigator.vibrate) {
+        navigator.vibrate(50); // vibra por 100ms
+    }
+});
+
+// Vibración al tocar playTag
+playTag.addEventListener("click", () => {
+    if (navigator.vibrate) {
+        navigator.vibrate([50, 100, 50, 100, 50]); // patrón: vibra 50ms, pausa 100ms, vibra 50ms
+    }
+});
+

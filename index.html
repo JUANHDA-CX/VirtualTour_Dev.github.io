@@ -25,19 +25,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap/dist/SplitText.min.js"></script>
     <script src="anim.js"></script>
 
-
-    <style>
-        .psv-virtual-tour-link {
-            display: none !important;
-        }
-
-        #viewer {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
-
 </head>
 
 <body>
@@ -45,21 +32,24 @@
     <!-- SECCION 00 - MENU -->
 
     <nav>
-        <img id="logo" src="resources/logo_main.webp" alt="">
+        <img id="logo" src="resources/logo_main.webp" alt="logo">
         <div>
             <ul>
                 <li>
-                    <div></div>
+                    <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada" target="_blank"><img class="nav-icon"
+                            src="icons/crown-solid.svg"></a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <div></div>
+                    <a href="https://www.capcomusa.com/" target="_blank"><img class="nav-icon"
+                            src="icons/crown-solid.svg"></a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <div></div>
+                    <a href="https://gpuopen.com/" target="_blank"><img class="nav-icon"
+                            src="icons/crown-solid.svg"></a>
                 </li>
             </ul>
         </div>
@@ -90,9 +80,11 @@
         <div id="sections">
 
             <section id="section02">
-                <div id="viewer"></div>
+                <div id="viewer">
+                    <div class="cover-v"></div>
+                </div>
                 <div class="play-tag">
-                    <p>INGRESAR</p>
+                    <p class="play-txt">INGRESAR</p>
                 </div>
             </section>
 
@@ -122,23 +114,27 @@
                     quasi qui laborum fugit. Rerum laboriosam quis nisi, veniam, natus molestiae, mollitia
                     corporis at!
                 </p>
+
+
             </section>
         </div>
     </div>
+
+    <img src="WatchDogs2-01-B.png" alt="Watch Dogs 2" class="about-team-img">
 
     <!-- SECCION 04 - FOOTER -->
 
     <footer>
         <div>
             <div id="container_Flogo01">
-                <div class="footer-logo01"></div>
+                <div class="footer-logo01"><img src="resources/logo_main.webp"></div>
             </div>
             <div id="TittleFooter">
                 <p class="tittle03">VIRTUAL TOUR</p>
                 <p class="tittle04">INSTITUCION EDUCATIVA TECNICA NUESTRA SEÑORA DE NAZARETH</p>
             </div>
             <div id="container_Flogo02">
-                <div class="footer-logo02"></div>
+                <div class="footer-logo02"><img src="resources/logoIETNSN.png"></div>
             </div>
         </div>
         <div id="footer-textblock">
