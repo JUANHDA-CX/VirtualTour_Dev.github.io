@@ -12,7 +12,7 @@ await fetch('markers_panel.html')
 const nodes = [
     {
         id: 'node-1',
-        panorama: 'panoramics/twilight_sunset.jpg',
+        panorama: 'panoramics/twilight_sunset.webp',
         longitude: '-150deg',
         //sphereCorrection: { pan: '-220deg' },
         markers: [
@@ -40,7 +40,7 @@ const nodes = [
     },
     {
         id: 'node-2',
-        panorama: 'panoramics/IMG_20250608_214752_360.jpg',
+        panorama: 'panoramics/IMG_20250608_214752_360.webp',
         panoData: {
             fullWidth: 16384,
             fullHeight: 8192,
@@ -83,7 +83,7 @@ const nodes = [
     },
     {
         id: 'node-3',
-        panorama: 'panoramics/warm_restaurant.jpg',
+        panorama: 'panoramics/warm_restaurant.webp',
 
         //sphereCorrection: { pan: '-15deg' },
 
@@ -120,7 +120,7 @@ const nodes = [
     },
     {
         id: 'node-4',
-        panorama: 'panoramics/allphoto-bangkok-GfXqtWmiuDI-unsplash.jpg',
+        panorama: 'panoramics/allphoto-bangkok-GfXqtWmiuDI-unsplash.webp',
         panoData: {
             fullWidth: 16384,
             fullHeight: 8192,
@@ -163,7 +163,7 @@ const nodes = [
     },
     {
         id: 'node-5',
-        panorama: 'panoramics/palermo_sidewalk.jpg',
+        panorama: 'panoramics/palermo_sidewalk.webp',
         //sphereCorrection: { pan: '-105deg' },
         markers: [
             {
@@ -198,7 +198,7 @@ const nodes = [
     },
     {
         id: 'node-6',
-        panorama: 'panoramics/yokohama180.jpg',
+        panorama: 'panoramics/yokohama180.webp',
         panoData: {
             fullWidth: 16384,
             fullHeight: 8192,
@@ -260,54 +260,6 @@ const viewer = new Viewer({
         }],
         [MarkersPlugin, {}],
 
-        /*[GalleryPlugin, {
-            items: [
-                {
-                    id: 'pano-1',
-                    name: 'Panorama 1',
-                    panorama: 'panoramics/twilight_sunset.jpg',
-                    thumbnail: 'DeathStranding.png',
-                },
-                {
-                    id: 'pano-2',
-                    name: 'Panorama 2',
-                    panorama: 'p02.jpg',
-                    panoData: {
-                        fullWidth: 16384,
-                        fullHeight: 8192,
-                        croppedWidth: 8192,
-                        croppedHeight: 4096,
-                        croppedX: 4096,
-                        croppedY: 2048,
-                    },
-                    thumbnail: 'DeadSpaceRemake.png',
-                },
-                {
-                    id: 'pano-3',
-                    name: 'Panorama 3',
-                    panorama: 'panoramics/warm_restaurant.jpg',
-                    thumbnail: 'ACUnity.png',
-                },
-                {
-                    id: 'pano-4',
-                    name: 'Panorama 4',
-                    panorama: 'p04.jpg',
-                    thumbnail: 'GoW4.png',
-                },
-                {
-                    id: 'pano-5',
-                    name: 'Panorama 5',
-                    panorama: 'panoramics/palermo_sidewalk.jpg',
-                    thumbnail: 'GoW4.png',
-                },
-                {
-                    id: 'pano-6',
-                    name: 'Panorama 6',
-                    panorama: 'p06.jpg',
-                    thumbnail: 'GoW4.png',
-                },
-            ],
-        }],*/
     ]
 });
 const vtPlugin = viewer.getPlugin(VirtualTourPlugin);
