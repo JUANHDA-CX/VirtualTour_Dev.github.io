@@ -21,6 +21,11 @@ body {
     font-family: FamiljenGrotesk;
 }
 
+body::selection {
+    background-color: var(--palette_accent_white);
+    color: var(--palette_accent_black);
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -227,6 +232,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    user-select: none;
 }
 
 .nav-icon {
@@ -238,8 +244,6 @@ nav {
 .nav-icon:hover {
     opacity: 0.75;
 }
-
-
 
 nav ul {
     display: inline-block;
@@ -261,10 +265,8 @@ nav ul {
     }
 }
 
-nav ul li div {
-    width: 2rem;
-    height: 2rem;
-    background-color: #c2a555;
+nav ul li a {
+    user-select: none;
 }
 
 #container {
@@ -399,6 +401,7 @@ H6 {
 #container_tittle {
     display: block !important;
     width: 50%;
+    user-select: none;
 }
 
 @media screen and (min-width: 200px) {
@@ -454,6 +457,7 @@ H6 {
 .play-tag p {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .explore-tag {
@@ -590,7 +594,6 @@ H6 {
 }
 
 
-
 /*SECTION 03 ****************************************************************/
 /*SECTION 03 ****************************************************************/
 /*SECTION 03 ****************************************************************/
@@ -606,6 +609,7 @@ H6 {
     .about-team-img {
         width: 100%;
         height: auto;
+        user-select: none;
     }
 }
 
@@ -614,6 +618,7 @@ H6 {
     .about-team-img {
         width: 50%;
         height: auto;
+        user-select: none;
     }
 
 }
@@ -664,6 +669,10 @@ H6 {
 }
 
 
+/*FOOTER ****************************************************************/
+/*FOOTER ****************************************************************/
+/*FOOTER ****************************************************************/
+
 @media screen and (min-width: 200px) {
     footer {
         padding-top: 4rem;
@@ -694,6 +703,7 @@ footer div {
 #container_Flogo02 {
     width: 40%;
     height: 100%;
+    user-select: none;
 }
 
 .footer-logo01,
@@ -741,7 +751,7 @@ footer div {
     width: 60%;
     font-family: Orbitron;
     font-weight: 600;
-
+    user-select: none;
 }
 
 footer #TittleFooter p:nth-child(1) {
@@ -763,6 +773,7 @@ footer #TittleFooter p:nth-child(2) {
 
 #footer-textblock .Meta01 {
     text-align: center;
+    user-select: none;
 }
 
 @media screen and (min-width: 200px) {
