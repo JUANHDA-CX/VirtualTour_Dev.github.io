@@ -1,7 +1,7 @@
 addEventListener("DOMContentLoaded", (event) => {
 
     gsap.registerPlugin(SplitText);
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    gsap.registerPlugin(ScrollTrigger);
 
     gsap.from('#section02', {
         scrollTrigger: {
