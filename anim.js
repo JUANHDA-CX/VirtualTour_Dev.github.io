@@ -3,6 +3,9 @@ addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(SplitText);
     gsap.registerPlugin(ScrollTrigger);
 
+
+    // viewer animation
+
     gsap.from('#section02', {
         scrollTrigger: {
             trigger: '#viewer',
@@ -25,6 +28,8 @@ addEventListener("DOMContentLoaded", (event) => {
             smoothTouch: 0.1,
         });*/
 
+
+    // split-text animations
 
     let split01, split02;
 

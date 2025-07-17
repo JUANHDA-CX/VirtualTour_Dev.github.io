@@ -1,13 +1,16 @@
 import { Viewer } from '@photo-sphere-viewer/core';
 import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin';
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
-import { GalleryPlugin } from '@photo-sphere-viewer/gallery-plugin';
+
+// markers-panel data
 
 await fetch('markers_panel.html')
     .then(res => res.text())
     .then(html => {
         document.getElementById('markers-panel-container').innerHTML = html;
     });
+
+// panorama scenes    
 
 const nodes = [
     {
@@ -242,7 +245,7 @@ const nodes = [
 ];
 
 
-
+// viewer configs
 
 const viewer = new Viewer({
 
@@ -262,9 +265,11 @@ const viewer = new Viewer({
 
     ]
 });
+
 const vtPlugin = viewer.getPlugin(VirtualTourPlugin);
-const galleryPlugin = viewer.getPlugin(GalleryPlugin);
 const markersPlugin = viewer.getPlugin(MarkersPlugin);
+
+// select-markers setup
 
 vtPlugin.addEventListener('select-marker', ({ marker }) => {
     console.log('Marker seleccionado:', marker);

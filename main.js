@@ -1,3 +1,5 @@
+//fitty
+
 document.fonts.ready.then(() => {
 
     fitty('.tittle01', {
@@ -24,6 +26,8 @@ document.fonts.ready.then(() => {
 
 });
 
+// viewer 360 cover
+
 document.querySelectorAll('.play-tag').forEach(tag => {
     tag.addEventListener('click', function () {
         const viewerCover = document.querySelector('.cover-v');
@@ -32,13 +36,13 @@ document.querySelectorAll('.play-tag').forEach(tag => {
         const isCoverHidden = viewerCover.style.display === 'none';
 
         if (isCoverHidden) {
-            // bloquear visor
+            // lock viewer
             viewerCover.style.display = 'block';
             viewerCover.style.pointerEvents = 'auto';
             viewer.style.pointerEvents = 'none';
             btnText.textContent = 'INGRESAR';
         } else {
-            // desbloquear visor
+            // unlock viewer
             viewerCover.style.display = 'none';
             viewerCover.style.pointerEvents = 'none';
             viewer.style.pointerEvents = 'auto';
@@ -46,28 +50,31 @@ document.querySelectorAll('.play-tag').forEach(tag => {
         }
     });
 });
-/*
-window.addEventListener('orientationchange', () => {
-    // 0 o 180 es vertical (portrait)
-    if (window.orientation === 0 || window.orientation === 180) {
-        location.reload();
-    }
-});*/
 
-const scrollBtn = document.getElementById("scrollBtn");
-const playTag = document.querySelector(".play-tag"); // o ".tag-play" si ese es el nombre real
 
-// Vibración al hacer clic en scrollBtn
-scrollBtn.addEventListener("click", () => {
+// Vibration action
+const exploreTag = document.querySelector(".explore-tag");
+const playTag = document.querySelector(".play-tag");
+
+exploreTag.addEventListener("click", () => {
     if (navigator.vibrate) {
-        navigator.vibrate(50); // vibra por 100ms
+        navigator.vibrate(50); // duration
     }
 });
 
-// Vibración al tocar playTag
+
 playTag.addEventListener("click", () => {
     if (navigator.vibrate) {
-        navigator.vibrate([50, 100, 50, 100, 50]); // patrón: vibra 50ms, pausa 100ms, vibra 50ms
+        navigator.vibrate([50, 100, 50, 100, 50]); // pattern duration
     }
 });
 
+
+// explore-play scroll to down
+document.querySelector(".explore-tag").addEventListener("click", () => {
+    const offset = window.innerHeight * 0.75;
+    window.scrollBy({
+        top: offset,
+        behavior: "smooth"
+    });
+});
